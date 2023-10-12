@@ -211,6 +211,7 @@ def get_bond_duration(freq,
         duration += t*bond_face*bond_r/(1+r)**(t+1)/(freq)
     return duration/bond_cur
 
+#   计算凸度
 def get_convexity(freq, 
                   r, 
                   bond_r, 

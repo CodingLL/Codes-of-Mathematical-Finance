@@ -6,8 +6,17 @@ from tqdm import tqdm
 from chap1_codes import *
 from typing import *
 
+'''
+均值-方差模型
+'''
+
 def min_var_overall(mu: np.mat,
                     sigma: np.mat,):
+    '''
+    :param mu: 均值矩阵
+    :param sigma: 方差矩阵
+    :return:
+    '''
     # kwargs = {'mu':np.mat([7/60,3.2/40]).T , 'sigma':np.mat([[50/60**2,0],[0,25/40**2]]).T, 'rp':8, 'rf':5}
     sigma_rev = np.linalg.inv(sigma)
     one = np.mat([1 for i in range(mu.shape[0])]).T
@@ -18,7 +27,8 @@ def min_var_overall(mu: np.mat,
     
     print('c', denominator, 'b',mu.T*sigma_rev*one )
     return (sigma_rev*one)/denominator
-    
+
+#   均值-方差模型习题3
 def get_musigma_withrf(mu: np.mat,
                        sigma: np.mat,
                        rp: float,
@@ -39,6 +49,7 @@ def get_musigma_withrf(mu: np.mat,
     print('收益标准差:{:.4f}'.format(std))
     return w0, wp
 
+#   均值-方差模型习题3
 def get_musigma_norf(mu: np.mat,
                     sigma: np.mat,
                     rp: Optional[float]=None):
