@@ -129,6 +129,7 @@ if __name__ == '__main__':
     post_res = post_process(res, K, r, p, sp_level, sp_r, mode='P')
 
 
+
     print('==============欧式期权情况==============')
     C = [max(i - K, 0) for i in res[-1]][::-1] #从大到小排序，看涨期权
     P = [max(K - i, 0) for i in res[-1]][::-1]#从大到小排序，看跌期权
